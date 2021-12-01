@@ -25,16 +25,6 @@ function App() {
   const [filteredArticles, setFilteredArticles] = useState(articles);
 
   // Fetch data here.
-  const fetchData = async () => {
-    const response = await fetch(apiEndpoint);
-    const data = await response.json();
-    setArticles(data);
-    setFilteredArticles(data);
-  }
-
-  useEffect(() => {
-   fetchData();
-  }, []);
 
   return (
     <div className="App flex">

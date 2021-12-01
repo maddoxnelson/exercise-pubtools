@@ -2,18 +2,12 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 const HeadlineFilter = ({ articles, setFilteredArticles }) => {
-    const [text, setText] = useState();
 
-    useEffect(() => {
-        const filteredArticles = articles.filter(article => {
-            return article.headlines.basic.toLowerCase().includes(text.toLowerCase())
-        });
-        setFilteredArticles(filteredArticles)
-    }, [text])
+    // Filter your articles here.
 
     return <div className="flex flex-column">
         <label htmlFor="headline">Headline</label>
-        <input id="headline" onChange={({ target: { value} }) => setText(value)} />
+        <input id="headline" onChange={({ target: { value} }) => console.log("Something goes here!", value)} />
     </div>
 }
 

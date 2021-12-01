@@ -5,29 +5,9 @@ import RadioButton from "./RadioButton";
 const PublishFilter = ({ articles, setFilteredArticles }) => {
     const [selection, setSelection] = useState("all");
 
-    const publishedArticles = articles.filter(item => item.published);
-    const unpublishedArticles = articles.filter(item => !item.published);
+    // Filter your published articles here.
 
-    useEffect(() => {
-        // Filter your selection here
-
-        const filterArticles = () => {
-            switch(selection) {
-                case "published":
-                    return publishedArticles;
-                case "unpublished":
-                    return unpublishedArticles;
-                default:
-                    return articles;
-            }
-        }
-        
-        const filteredArticles = filterArticles();
-        setFilteredArticles(filteredArticles);
-        
-    }, [selection])
-
-    return <div className="flex flex-column" onChange={({ target: { value } }) => setSelection(value)}>
+    return <div className="flex flex-column" onChange={({ target: { value } }) => console.log("Something goes here!", value)}>
         <label>Published Status</label>
         <RadioButton value="all" name="publish">All</RadioButton>
         <RadioButton value="published" name="publish">Published only</RadioButton>
