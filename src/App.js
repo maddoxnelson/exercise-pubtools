@@ -1,23 +1,56 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
+import PublishFilter from './components/PublishFilter';
 import './App.css';
+import HeadlineFilter from './components/HeadlineFilter';
+import StoryCard from './components/StoryCard';
+
+const apiEndpoint = "https://gist.githubusercontent.com/maddoxnelson/b8481ceb3c78e6effe424cdb77c87903/raw/e4ad83b0278103675e135e4732ed9d2a798ff25e/articles.json";
+
+// Steps:
+//  1. Fetch the list of articles from apiEndpoint.
+//  2. Render each article with a StoryCard component, passing in the following props:
+//     - Headline
+//     - Section
+//     - Published status
+//     - Publish time
+//     - Authors
+//     - URL
+//  3. Show only published stories by hooking up the "Published Status" radio buttons
+//     in the left-hand sidebar.
+//  4. Filter the stories by headline match.
 
 function App() {
+
+  const [articles, setArticles] = useState([]);
+  const [filteredArticles, setFilteredArticles] = useState(articles);
+
+  // Fetch data here.
+  const fetchData = async () => {
+    const response = await fetch(apiEndpoint);
+    const data = await response.json();
+    setArticles(data);
+    setFilteredArticles(data);
+  }
+
+  useEffect(() => {
+   fetchData();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App flex">
+      <header className="App-header" />
+      <div className="left-bar">
+        <PublishFilter articles={articles} setFilteredArticles={setFilteredArticles} />
+        <HeadlineFilter articles={articles} setFilteredArticles={setFilteredArticles} />
+      </div>
+      <div>
+        {/* Render articles here. */}
+        {
+          filteredArticles.map((article, i) => {
+            return <StoryCard key={i} {...article} />
+          })
+        }
+      </div>
     </div>
   );
 }
