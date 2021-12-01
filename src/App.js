@@ -35,11 +35,6 @@ function App() {
       </div>
       <div>
         {/* Render articles here. */}
-        {
-          filteredArticles.map((article, i) => {
-            return <StoryCard key={i} {...article} />
-          })
-        }
       </div>
     </div>
   );
