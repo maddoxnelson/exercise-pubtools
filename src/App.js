@@ -8,13 +8,7 @@ const apiEndpoint = "https://gist.githubusercontent.com/maddoxnelson/b8481ceb3c7
 
 // Steps:
 //  1. Fetch the list of articles from apiEndpoint.
-//  2. Render each article with a StoryCard component, passing in the following props:
-//     - Headline
-//     - Section
-//     - Published status
-//     - Publish time
-//     - Authors
-//     - URL
+//  2. Render each article with a StoryCard component, passing in props coming from the API response.
 //  3. Show only published stories by hooking up the "Published Status" radio buttons
 //     in the left-hand sidebar.
 //  4. Filter the stories by headline match.
