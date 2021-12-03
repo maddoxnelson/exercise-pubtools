@@ -4,7 +4,7 @@ import './App.css';
 import HeadlineFilter from './components/HeadlineFilter';
 import StoryCard from './components/StoryCard';
 
-const apiEndpoint = "https://gist.githubusercontent.com/maddoxnelson/b8481ceb3c78e6effe424cdb77c87903/raw/e4ad83b0278103675e135e4732ed9d2a798ff25e/articles.json";
+const apiEndpoint = "https://gist.githubusercontent.com/maddoxnelson/b8481ceb3c78e6effe424cdb77c87903/raw/c390150d074d87f17f6eae288212f5f9bd02c062/articles.json";
 
 // Steps:
 //  1. Fetch the list of articles from apiEndpoint.
