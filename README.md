@@ -11,6 +11,7 @@ In this exercise, you'll fetch a list of news stories and apply various filters 
 ## Getting started:
 1. Clone the repo:  
    `git clone git@github.com:maddoxnelson/exercise.git`
+1. `cd exercise`
 1. Run `npm install` from the root directory.
 1. Run `npm run start` to spin up the project. You should see a mostly blank screen at [localhost:3000](http://localhost:3000/).
 
