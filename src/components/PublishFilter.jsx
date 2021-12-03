@@ -7,7 +7,7 @@ const PublishFilter = ({ articles, setFilteredArticles }) => {
 
     // Filter your published articles here.
 
-    return <div className="flex flex-column" onChange={({ target: { value } }) => console.log("Something goes here!", value)}>
+    return <div className="flex flex-column pad-16" onChange={({ target: { value } }) => console.log("Something goes here!", value)}>
         <label>Published Status</label>
         <RadioButton value="all" name="publish">All</RadioButton>
         <RadioButton value="published" name="publish">Published only</RadioButton>

@@ -5,7 +5,7 @@ const HeadlineFilter = ({ articles, setFilteredArticles }) => {
 
     // Filter your articles here.
 
-    return <div className="flex flex-column">
+    return <div className="flex flex-column pad-16">
         <label htmlFor="headline">Headline</label>
         <input id="headline" onChange={({ target: { value} }) => console.log("Something goes here!", value)} />
     </div>
