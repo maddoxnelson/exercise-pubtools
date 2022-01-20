@@ -5,7 +5,7 @@
 In this exercise, you'll fetch a list of news stories and apply various filters to them, simulating a real-world workflow our newsroom uses to find and edit stories.
 
 ## Pre-requisites:
-- Make sure you have Node installed. Most versions should be fine, but if you run into any issues, we've tested it on `v17.1.0` and `v13.13.0`.
+- Make sure you have Node installed. Most versions should be fine, but if you run into any issues, we've tested it on `v13.13.0`.
   - It can help to have [NVM installed](https://github.com/nvm-sh/nvm) to switch between versions, if you run into issues.
 
 ## Getting started:
